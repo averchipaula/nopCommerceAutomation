@@ -24,6 +24,7 @@ public class ElementMethods {
     }
 
     public void selectValueElement(WebElement element, String value) {
+
         Select DropDown = new Select(element);
         DropDown.selectByValue(value);
 
