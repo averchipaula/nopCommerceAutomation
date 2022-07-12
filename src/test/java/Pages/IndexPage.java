@@ -19,12 +19,15 @@ public class IndexPage extends BasePage {
         elementMethods.clickElement(registerElement);
     }
 
+    @FindBy(xpath="//a[text()='Log in']")
+    private WebElement clickSignin;
 
 
-
-   // public void clickRegister() {
-       // elementMethods.clickElement(registerElement); }
+    public void ClickSignin(){
+        elementMethods.clickElement(clickSignin);
     }
+}
+
 
 
 
