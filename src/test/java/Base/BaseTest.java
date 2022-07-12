@@ -7,9 +7,9 @@ public class BaseTest {
     private WebDriver Driver;
 
     public void initiateDriver() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver");
         Driver = new ChromeDriver();
-        Driver.get("http://demo.automationtesting.in/Index.html");
+        Driver.get("https://demo.nopcommerce.com/");
         Driver.manage().window().maximize();
     }
 
