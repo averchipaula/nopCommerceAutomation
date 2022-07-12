@@ -1,6 +1,7 @@
 package HelpMethods;
 
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -17,7 +18,7 @@ public class ElementMethods {
         element.click();
     }
 
-    public void fillElement(WebElement element, String value) {
+    public void fillElement(WebElement element , String value) {
         element.sendKeys(value);
 
     }
