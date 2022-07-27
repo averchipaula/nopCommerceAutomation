@@ -30,11 +30,9 @@ public class LoginPage {
     @FindBy(id = "RememberMe")
     private WebElement ClickRememberElement;
 
-    @FindBy(xpath= "//button[text()='Log in']")
+    @FindBy(xpath= "//button[@class='button-1 login-button']")
     private WebElement SubmitLoginElement;
 
-    @FindBy(css="//div[text()='Login was unsuccessful. Please correct the errors and try again.']")
-    private WebElement ValidateErrorMessage;
 
 
     public void loginValidProcess(LoginObject loginData) {
@@ -43,7 +41,7 @@ public class LoginPage {
         elementMethods.fillElement(PasswordElement, loginData.getPassword());
         elementMethods.clickElement(ClickRememberElement);
         elementMethods.clickElement(SubmitLoginElement);
-        elementMethods.validateElementText(ValidateErrorMessage,loginData.getValidateErrorMessage());
+
 
     }
 
