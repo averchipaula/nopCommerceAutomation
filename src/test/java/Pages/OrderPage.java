@@ -3,7 +3,10 @@ package Pages;
 import Objects.OrderObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+
+import java.sql.Driver;
 
 public class OrderPage extends BasePage {
     public OrderPage(WebDriver driver) {
@@ -56,21 +59,48 @@ public class OrderPage extends BasePage {
     private WebElement termsofServiceElement;
     @FindBy(id="checkout")
     private WebElement checkOutElement;
+    @FindBy(id="BillingNewAddress_CountryId")
+    private WebElement clickcountry;
+    @FindBy(xpath = "//select[@name='BillingNewAddress.CountryId']")
+    private WebElement selectcountry;
+    @FindBy(id="BillingNewAddress_StateProvinceId")
+    private WebElement clickState;
+    @FindBy(xpath = "//select[@name='BillingNewAddress.StateProvinceId']")
+    private WebElement selectState;
+    @FindBy(id="BillingNewAddress_City")
+    private WebElement fillCity;
+    @FindBy(id="BillingNewAddress_Address1")
+    private WebElement fillAddress;
+    @FindBy(id="BillingNewAddress_ZipPostalCode")
+    private WebElement zipCode;
+    @FindBy(id="BillingNewAddress_PhoneNumber")
+    private WebElement phoneNumber;
+    @FindBy(xpath = "//button[@class='button-1 new-address-next-step-button']")
+    private WebElement clickContinue;
+   // @FindBy(css="#shippingoption_0")
+   // private WebElement clickShipping;
+    @FindBy(xpath = "//button[@class='button-1 new-address-next-step-button']")
+    private WebElement continueButton;
+
 
     public void orderProduct(OrderObject orderData) {
 
        elementMethods.clickElement(computersElement);
        elementMethods.clickElement(notebooksElement);
        macbookElement.click();
+       quantityElement.clear();
        elementMethods.fillElement(quantityElement,"4");
        addcartElement.click();
        asusElement.click();
+       quantityasusElement.clear();
        elementMethods.fillElement(quantityasusElement,"1");
        cartElement.click();
        hpspectreElement.click();
+       hpspectreqtyElement.clear();
        elementMethods.fillElement(hpspectreqtyElement,"2");
        hpspectrecartElement.click();
        lenovoElement.click();
+       lenovoaqtyElement.clear();
        elementMethods.fillElement(lenovoaqtyElement,"3");
        lenovoaddcardElement.click();
        clickCartElement.click();
@@ -82,6 +112,20 @@ public class OrderPage extends BasePage {
        signinElement.click();
        termsofServiceElement.click();
        checkOutElement.click();
+       clickcountry.click();
+      elementMethods.selectTextElement(selectcountry,orderData.getCountry());
+      clickcountry.click();
+        clickState.click();
+        elementMethods.selectTextElement(selectState, orderData.getState());
+       elementMethods.fillElement(fillCity,orderData.getCity());
+       elementMethods.fillElement(fillAddress,orderData.getAddress());
+       elementMethods.fillElement(zipCode, orderData.getZip());
+       elementMethods.fillElement(phoneNumber, orderData.getPhone());
+       clickContinue.click();
+        // clickShipping.click();
+   //  continueButton.click();
+        continueButton.click();
+
 
 
 
@@ -91,3 +135,17 @@ public class OrderPage extends BasePage {
 
 
 }
+
+
+// clickcountry.click();
+//  elementMethods.selectTextElement(selectcountry,orderData.getCountry());
+//  clickcountry.click();
+/// clickState.click();
+// elementMethods.selectTextElement(selectState, orderData.getState());
+// elementMethods.fillElement(fillCity,orderData.getCity());
+// elementMethods.fillElement(fillAddress,orderData.getAddress());
+//  elementMethods.fillElement(zipCode, orderData.getZip());
+//  elementMethods.fillElement(phoneNumber, orderData.getPhone());
+// clickContinue.click();
+// clickShipping.click();
+

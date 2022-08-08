@@ -7,7 +7,7 @@ public class BaseTest {
     private WebDriver Driver;
 
     public void initiateDriver() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver 2");
         Driver = new ChromeDriver();
         Driver.get("https://demo.nopcommerce.com/");
         Driver.manage().window().maximize();

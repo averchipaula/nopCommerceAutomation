@@ -52,6 +52,7 @@ public class ApparelPage extends BasePage{
         adidasElement.click();
         adidasSizeElement(apparelData.getSize());
         redColorElement.click();
+        quantityElement.clear();
         fillquantityElement(apparelData.getQuantity());
         cartbuttonElement.click();
         clickshoppingcartElement.click();
