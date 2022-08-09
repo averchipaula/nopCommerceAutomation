@@ -22,6 +22,26 @@ public class WishlistTest extends Hooks {
 
         WishlistPage wishlistPage = new WishlistPage(getDriver());
         wishlistPage.wishlistTest(wishlistData);
+
     }
+
+    @Test
+    public void invalidGiftCard(){
+
+        WishlistObject wishlistData = new WishlistObject(testData);
+
+
+        WishlistPage wishlistPage = new WishlistPage(getDriver());
+        wishlistPage.invalidGiftCardMessage(wishlistData);
+    }
+
+    @Test
+    public void validateWishlistCart(){
+
+
+
+    }
+
+
 
 }

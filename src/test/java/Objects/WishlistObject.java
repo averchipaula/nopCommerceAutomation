@@ -5,12 +5,16 @@ import java.util.HashMap;
 public class WishlistObject {
 
     private String loginPage;
-
     private String Email;
-
     private String Password;
-
     private String wishlistPage;
+    private String booksPage;
+    private String jewelryPage;
+    private String giftCardsPage;
+    private String errorNameMessage;
+    private String errorSenderMessage;
+
+
 
 
     public WishlistObject(HashMap<String, String> inputData) {
@@ -31,6 +35,21 @@ public class WishlistObject {
                     break;
                 case "wishlistPage":
                     setWishlistPage(inputData.get(key));
+                    break;
+                case "booksPage":
+                    setBooksPage(inputData.get(key));
+                    break;
+                case "jewelryPage":
+                    setJewelryPage(inputData.get(key));
+                    break;
+                case "giftCardsPage":
+                    setGiftCardsPage(inputData.get(key));
+                    break;
+                case "errorNameMessage":
+                    setErrorNameMessage(inputData.get(key));
+                    break;
+                case "errorSenderMessage":
+                    setErrorSenderMessage(inputData.get(key));
                     break;
 
             }
@@ -68,5 +87,45 @@ public class WishlistObject {
 
     public void setWishlistPage(String wishlistPage) {
         this.wishlistPage = wishlistPage;
+    }
+
+    public String getBooksPage() {
+        return booksPage;
+    }
+
+    public void setBooksPage(String booksPage) {
+        this.booksPage = booksPage;
+    }
+
+    public String getJewelryPage() {
+        return jewelryPage;
+    }
+
+    public void setJewelryPage(String jewelryPage) {
+        this.jewelryPage = jewelryPage;
+    }
+
+    public String getGiftCardsPage() {
+        return giftCardsPage;
+    }
+
+    public void setGiftCardsPage(String giftCardsPage) {
+        this.giftCardsPage = giftCardsPage;
+    }
+
+    public String getErrorNameMessage() {
+        return errorNameMessage;
+    }
+
+    public void setErrorNameMessage(String errorNameMessage) {
+        this.errorNameMessage = errorNameMessage;
+    }
+
+    public String getErrorSenderMessage() {
+        return errorSenderMessage;
+    }
+
+    public void setErrorSenderMessage(String errorSenderMessage) {
+        this.errorSenderMessage = errorSenderMessage;
     }
 }

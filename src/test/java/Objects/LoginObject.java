@@ -10,7 +10,9 @@ public class LoginObject {
 
     private String Password;
 
-    private String ValidateErrorMessage;
+    private String emailErrorMessage;
+
+    private String PasswordErrorMessage;
 
     public LoginObject(HashMap<String, String> inputData){
         populateObject(inputData);
@@ -28,8 +30,11 @@ public class LoginObject {
                 case "Password":
                     setPassword(inputData.get(key));
                     break;
-                case "ValidateErrorMessage":
-                    setValidateErrorMessage(inputData.get(key));
+                case "EmailErrorMessage":
+                    setEmailErrorMessage(inputData.get(key));
+                    break;
+                case "PasswordErrorMessage":
+                    setPasswordErrorMessage(inputData.get(key));
                     break;
 
             }
@@ -57,20 +62,23 @@ public class LoginObject {
         return Password;
     }
 
-    public String getValidateErrorMessage() {
-        return ValidateErrorMessage;
+    public String getEmailErrorMessage() {
+        return emailErrorMessage;
     }
 
-    public void setValidateErrorMessage(String validateErrorMessage) {
-        ValidateErrorMessage = validateErrorMessage;
+    public void setEmailErrorMessage(String emailErrorMessage) {
+        this.emailErrorMessage = emailErrorMessage;
     }
 
     public void setPassword(String password) {
         Password = password;
+    }
 
+    public String getPasswordErrorMessage() {
+        return PasswordErrorMessage;
+    }
 
-
-
-
+    public void setPasswordErrorMessage(String passwordErrorMessage) {
+        PasswordErrorMessage = passwordErrorMessage;
     }
 }

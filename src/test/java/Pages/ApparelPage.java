@@ -33,6 +33,20 @@ public class ApparelPage extends BasePage{
    private WebElement clickshoppingcartElement;
   // @FindBy(xpath = "//li/a[@title='Show details for Nike Floral Roshe Customized Running Shoes']")
   // private WebElement clickNikeFloralElement;
+    @FindBy(id="termsofservice")
+    private WebElement termofserviceElement;
+    @FindBy(id="checkout")
+    private WebElement checkoutElement;
+    @FindBy(id="Email")
+    private WebElement emailElement;
+    @FindBy(id="Password")
+    private WebElement passwordElement;
+    @FindBy(id="RememberMe")
+    private WebElement remembermeElement;
+    @FindBy(xpath = "//button[@class='button-1 login-button']")
+    private WebElement signinElement;
+    @FindBy(xpath = "//button[@class='button-1 new-address-next-step-button']")
+    private WebElement clickContinueElement;
 
 
 
@@ -57,6 +71,15 @@ public class ApparelPage extends BasePage{
         cartbuttonElement.click();
         clickshoppingcartElement.click();
        // clickNikeFloralElement.click();
+        termofserviceElement.click();
+        checkoutElement.click();
+        elementMethods.fillElement(emailElement,apparelData.getEmail());
+        elementMethods.fillElement(passwordElement,apparelData.getPassword());
+        remembermeElement.click();
+        signinElement.click();
+        termofserviceElement.click();
+        checkoutElement.click();
+        clickshoppingcartElement.click();
 
 
 

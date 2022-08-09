@@ -1,5 +1,6 @@
 package Pages;
 
+import Objects.LoginObject;
 import Objects.RegisterObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,6 +36,15 @@ public class RegisterPage extends BasePage{
     private WebElement ConfirmPassword;
     @FindBy(id="register-button")
     private WebElement SubmitButton;
+    @FindBy(id="FirstName-error")
+    private WebElement firstNameError;
+    @FindBy(id="Email-error")
+    private WebElement invalidEmail;
+    @FindBy(xpath="//li[text()='The specified email already exists']")
+    private WebElement emailExists;
+    @FindBy(xpath="//span/p[text()='Password must meet the following rules: ']")
+    private WebElement passwordErrorwWthLesChar;
+
 
 
     public void registerValid(RegisterObject registerData){
@@ -56,6 +66,101 @@ public class RegisterPage extends BasePage{
 
     }
 
+    public void registerInvalidName(RegisterObject registerData){
+        pageMethods.validateTitlePage(registerData.getRegisterPage());
+        elementMethods.clickElement(ClickGender);
+        elementMethods.fillElement(LastNameElement,registerData.getLastName());
+        elementMethods.selectValueElement(dayElement,registerData.getDay());
+        elementMethods.clickElement(monthElement);
+        elementMethods.selectTextElement(monthElement,registerData.getMonth());
+        elementMethods.selectValueElement(yearElement,registerData.getYear());
+        elementMethods.fillElement(emailAddress,registerData.getEmail());
+        elementMethods.fillElement(Company,registerData.getCompany());
+        elementMethods.clickElement(ClickNewsletter);
+        elementMethods.fillElement(Password, registerData.getPassword());
+        elementMethods.fillElement(ConfirmPassword, registerData.getConfirmPassword());
+        elementMethods.clickElement(SubmitButton);
+        elementMethods.validateElementText(firstNameError, registerData.getFirstNameError());
+
+    }
+
+    public void registerInvalidEmail(RegisterObject registerData){
+        pageMethods.validateTitlePage(registerData.getRegisterPage());
+        elementMethods.clickElement(ClickGender);
+        elementMethods.fillElement(FirstNameElement, registerData.getFirstName());
+        elementMethods.fillElement(LastNameElement,registerData.getLastName());
+        elementMethods.selectValueElement(dayElement,registerData.getDay());
+        elementMethods.clickElement(monthElement);
+        elementMethods.selectTextElement(monthElement,registerData.getMonth());
+        elementMethods.selectValueElement(yearElement,registerData.getYear());
+        elementMethods.fillElement(Company,registerData.getCompany());
+        elementMethods.clickElement(ClickNewsletter);
+        elementMethods.fillElement(Password, registerData.getPassword());
+        elementMethods.fillElement(ConfirmPassword, registerData.getConfirmPassword());
+        elementMethods.clickElement(SubmitButton);
+        elementMethods.validateElementText(invalidEmail, registerData.getEmailInvalid());
+
+    }
+
+    public void registerWrongEmail(RegisterObject registerData){
+        pageMethods.validateTitlePage(registerData.getRegisterPage());
+        elementMethods.clickElement(ClickGender);
+        elementMethods.fillElement(FirstNameElement, registerData.getFirstName());
+        elementMethods.fillElement(LastNameElement,registerData.getLastName());
+        elementMethods.selectValueElement(dayElement,registerData.getDay());
+        elementMethods.clickElement(monthElement);
+        elementMethods.selectTextElement(monthElement,registerData.getMonth());
+        elementMethods.selectValueElement(yearElement,registerData.getYear());
+        elementMethods.fillElement(Company,registerData.getCompany());
+        elementMethods.clickElement(ClickNewsletter);
+        elementMethods.fillElement(Password, registerData.getPassword());
+        elementMethods.fillElement(ConfirmPassword, registerData.getConfirmPassword());
+        elementMethods.clickElement(SubmitButton);
+        elementMethods.validateElementText(invalidEmail, registerData.getWrongEmail());
+
+    }
+    public void registerSameEmail(RegisterObject registerData){
+        pageMethods.validateTitlePage(registerData.getRegisterPage());
+        elementMethods.clickElement(ClickGender);
+        elementMethods.fillElement(FirstNameElement, registerData.getFirstName());
+        elementMethods.fillElement(LastNameElement,registerData.getLastName());
+        elementMethods.selectValueElement(dayElement,registerData.getDay());
+        elementMethods.clickElement(monthElement);
+        elementMethods.selectTextElement(monthElement,registerData.getMonth());
+        elementMethods.selectValueElement(yearElement,registerData.getYear());
+        elementMethods.fillElement(emailAddress,registerData.getEmail());
+        elementMethods.fillElement(Company,registerData.getCompany());
+        elementMethods.clickElement(ClickNewsletter);
+        elementMethods.fillElement(Password, registerData.getPasswordForEmail());
+        elementMethods.fillElement(ConfirmPassword, registerData.getConfirmPasswordForEmail());
+        elementMethods.clickElement(SubmitButton);
+        elementMethods.validateElementText(emailExists, registerData.getSameEmail());
+
+    }
+
+    public void registerPasswordError(RegisterObject registerData){
+        pageMethods.validateTitlePage(registerData.getRegisterPage());
+        elementMethods.clickElement(ClickGender);
+        elementMethods.fillElement(FirstNameElement, registerData.getFirstName());
+        elementMethods.fillElement(LastNameElement,registerData.getLastName());
+        elementMethods.selectValueElement(dayElement,registerData.getDay());
+        elementMethods.clickElement(monthElement);
+        elementMethods.selectTextElement(monthElement,registerData.getMonth());
+        elementMethods.selectValueElement(yearElement,registerData.getYear());
+        elementMethods.fillElement(emailAddress,registerData.getEmail());
+        elementMethods.fillElement(Company,registerData.getCompany());
+        elementMethods.clickElement(ClickNewsletter);
+        elementMethods.fillElement(Password, registerData.getPasswordErrorShort());
+        elementMethods.fillElement(ConfirmPassword, registerData.getConfirmPasswordErrorShort());
+        elementMethods.clickElement(SubmitButton);
+        elementMethods.validateElementText(passwordErrorwWthLesChar, registerData.getPasswordError());
+
+    }
+
+    }
 
 
-}
+
+
+
+
