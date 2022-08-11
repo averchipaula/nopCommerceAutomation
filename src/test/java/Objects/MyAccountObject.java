@@ -16,6 +16,9 @@ public class MyAccountObject {
     private String Address;
     private String Zip;
     private String Phone;
+    private String emailSc;
+    private String invalidEmail;
+    private String errorMessage;
 
 
 
@@ -64,6 +67,15 @@ public class MyAccountObject {
                     break;
                 case "Phone":
                     setPhone(inputData.get(key));
+                    break;
+                case "emailSc":
+                    setEmailSc(inputData.get(key));
+                    break;
+                case "invalidEmail":
+                    setInvalidEmail(inputData.get(key));
+                    break;
+                case "errorMessage":
+                    setErrorMessage(inputData.get(key));
                     break;
             }
         }
@@ -172,6 +184,30 @@ public class MyAccountObject {
 
     public void setPhone(String phone) {
         Phone = phone;
+    }
+
+    public String getEmailSc() {
+        return emailSc;
+    }
+
+    public void setEmailSc(String emailSc) {
+        this.emailSc = emailSc;
+    }
+
+    public String getInvalidEmail() {
+        return invalidEmail;
+    }
+
+    public void setInvalidEmail(String invalidEmail) {
+        this.invalidEmail = invalidEmail;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 }
 

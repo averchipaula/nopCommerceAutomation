@@ -28,5 +28,39 @@ public class MyAccountTest extends Hooks {
 
     }
 
+    @Test
+    public void MyAccountSecondTest() {
+
+        MyAccountObject myaccountData = new MyAccountObject(testData);
+
+        IndexPage indexPage = new IndexPage(getDriver());
+        indexPage.ClickSignin();
+
+
+        MyAccountPage myaccountPage = new MyAccountPage(getDriver());
+        myaccountPage.createSecondAccount(myaccountData);
+
+
+
+
+    }
+
+    @Test
+    public void InvalidEmailTest() {
+
+        MyAccountObject myaccountData = new MyAccountObject(testData);
+
+        IndexPage indexPage = new IndexPage(getDriver());
+        indexPage.ClickSignin();
+
+
+        MyAccountPage myaccountPage = new MyAccountPage(getDriver());
+        myaccountPage.invalidEmailAccount(myaccountData);
+
+
+
+
+    }
+
 
 }

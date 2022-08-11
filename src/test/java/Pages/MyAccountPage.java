@@ -51,6 +51,10 @@ public class MyAccountPage extends BasePage {
     private WebElement fillPhoneElement;
     @FindBy(xpath = "//button[@class='button-1 save-address-button']")
     private WebElement saveButtonElement;
+    @FindBy(xpath = "//button[@class='button-2 delete-address-button']")
+    private WebElement deleteAccountElement;
+    @FindBy(id="Address_Email-error")
+    private WebElement errorEmailElement;
 
 
 
@@ -86,5 +90,69 @@ public class MyAccountPage extends BasePage {
 
 
     }
+
+    public void createSecondAccount(MyAccountObject myaccountData) {
+        pageMethods.validateTitlePage(myaccountData.getLoginPage());
+        elementMethods.fillElement(EmailElement, myaccountData.getEmail());
+        elementMethods.fillElement(PasswordElement, myaccountData.getPassword());
+        elementMethods.clickElement(ClickRememberElement);
+        elementMethods.clickElement(SubmitLoginElement);
+        clickMyaccountElement.click();
+        pageMethods.validateTitlePage(myaccountData.getMyaccountPage());
+        clickSaveElement.click();
+        clickAdressElement.click();
+        addAdressElement.click();
+        elementMethods.fillElement(firstNameElement, myaccountData.getFirstName());
+        elementMethods.fillElement(lastNameElement, myaccountData.getLastName());
+        elementMethods.fillElement(emailprElement, myaccountData.getEmailSc());
+        clickCountryElement.click();
+        elementMethods.selectTextElement(selectCountryElement, myaccountData.getCountry());
+        clickCountryElement.click();
+        clickStateElement.click();
+        elementMethods.selectTextElement(selectStateElement, myaccountData.getState());
+        elementMethods.fillElement(fillCityElement, myaccountData.getCity());
+        elementMethods.fillElement(fillAddressElement, myaccountData.getAddress());
+        elementMethods.fillElement(fillZipElement, myaccountData.getZip());
+        elementMethods.fillElement(fillPhoneElement, myaccountData.getPhone());
+        saveButtonElement.click();
+
+
+
+
+    }
+
+    public void invalidEmailAccount(MyAccountObject myaccountData) {
+        pageMethods.validateTitlePage(myaccountData.getLoginPage());
+        elementMethods.fillElement(EmailElement, myaccountData.getEmail());
+        elementMethods.fillElement(PasswordElement, myaccountData.getPassword());
+        elementMethods.clickElement(ClickRememberElement);
+        elementMethods.clickElement(SubmitLoginElement);
+        clickMyaccountElement.click();
+        pageMethods.validateTitlePage(myaccountData.getMyaccountPage());
+        clickSaveElement.click();
+        clickAdressElement.click();
+        addAdressElement.click();
+        elementMethods.fillElement(firstNameElement, myaccountData.getFirstName());
+        elementMethods.fillElement(lastNameElement, myaccountData.getLastName());
+        elementMethods.fillElement(emailprElement, myaccountData.getInvalidEmail());
+        clickCountryElement.click();
+        elementMethods.selectTextElement(selectCountryElement, myaccountData.getCountry());
+        clickCountryElement.click();
+        clickStateElement.click();
+        elementMethods.selectTextElement(selectStateElement, myaccountData.getState());
+        elementMethods.fillElement(fillCityElement, myaccountData.getCity());
+        elementMethods.fillElement(fillAddressElement, myaccountData.getAddress());
+        elementMethods.fillElement(fillZipElement, myaccountData.getZip());
+        elementMethods.fillElement(fillPhoneElement, myaccountData.getPhone());
+        saveButtonElement.click();
+        elementMethods.validateElementText(errorEmailElement,myaccountData.getErrorMessage());
+
+
+
+
+
+
+    }
+
 
 }
