@@ -13,7 +13,7 @@ public class WishlistTest extends Hooks {
 
 
     @Test
-    public void ListaFavorite(){
+    public void ListaFavorite() {
 
         WishlistObject wishlistData = new WishlistObject(testData);
 
@@ -26,22 +26,25 @@ public class WishlistTest extends Hooks {
     }
 
     @Test
-    public void invalidGiftCard(){
+    public void validGiftCard() {
 
         WishlistObject wishlistData = new WishlistObject(testData);
 
 
         WishlistPage wishlistPage = new WishlistPage(getDriver());
-        wishlistPage.invalidGiftCardMessage(wishlistData);
+        wishlistPage.validGiftCard(wishlistData);
     }
 
     @Test
-    public void validateWishlistCart(){
+    public void invalidCardName() {
+
+        WishlistObject wishlistData = new WishlistObject(testData);
 
 
+        WishlistPage wishlistPage = new WishlistPage(getDriver());
+        wishlistPage.invalidGiftCard(wishlistData);
 
     }
-
 
 
 }

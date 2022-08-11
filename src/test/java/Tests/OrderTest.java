@@ -19,9 +19,17 @@ public class OrderTest extends Hooks{
         orderPage.orderProduct(orderData);
 
 
+    }
 
+    @Test
+    public void OrderProductsCardPayment(){
+        OrderObject orderData = new OrderObject(testData);
 
+        IndexPage indexPage = new IndexPage(getDriver());
+        indexPage.ClickSignin();
 
+        OrderPage orderPage = new OrderPage(getDriver());
+        orderPage.orderProductsWithCardPayment(orderData);
 
     }
 

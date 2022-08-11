@@ -24,6 +24,20 @@ public class OrderObject {
 
     private String Phone;
 
+    private String confirmation;
+
+    private String cardType;
+
+    private String cardHolder;
+
+    private String cardNumber;
+
+    private String dayCard;
+
+    private String expireYear;
+
+    private String cardCode;
+
 
     public OrderObject(HashMap<String, String> inputData){
         populateObject(inputData);
@@ -63,6 +77,30 @@ public class OrderObject {
                 case "Phone":
                     setPhone(inputData.get(key));
                     break;
+                case "confirmation":
+                    setConfirmation(inputData.get(key));
+                    break;
+                case "cardType":
+                    setCardType(inputData.get(key));
+                    break;
+                case "cardHolder":
+                    setCardHolder(inputData.get(key));
+                    break;
+                case "cardNumber":
+                    setCardNumber(inputData.get(key));
+                    break;
+                case "dayCard":
+                    setDayCard(inputData.get(key));
+                    break;
+                case "expireYear":
+                    setExpireYear(inputData.get(key));
+                    break;
+                case "cardCode":
+                    setCardCode(inputData.get(key));
+                    break;
+
+
+
 
 
 
@@ -151,6 +189,62 @@ public class OrderObject {
 
     public void setPhone(String phone) {
         Phone = phone;
+    }
+
+    public String getConfirmation() {
+        return confirmation;
+    }
+
+    public void setConfirmation(String confirmation) {
+        this.confirmation = confirmation;
+    }
+
+    public String getCardType() {
+        return cardType;
+    }
+
+    public void setCardType(String cardType) {
+        this.cardType = cardType;
+    }
+
+    public String getCardHolder() {
+        return cardHolder;
+    }
+
+    public void setCardHolder(String cardHolder) {
+        this.cardHolder = cardHolder;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public String getDayCard() {
+        return dayCard;
+    }
+
+    public void setDayCard(String dayCard) {
+        this.dayCard = dayCard;
+    }
+
+    public String getExpireYear() {
+        return expireYear;
+    }
+
+    public void setExpireYear(String expireYear) {
+        this.expireYear = expireYear;
+    }
+
+    public String getCardCode() {
+        return cardCode;
+    }
+
+    public void setCardCode(String cardCode) {
+        this.cardCode = cardCode;
     }
 }
 

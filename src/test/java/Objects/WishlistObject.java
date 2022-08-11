@@ -13,6 +13,15 @@ public class WishlistObject {
     private String giftCardsPage;
     private String errorNameMessage;
     private String errorSenderMessage;
+    private String fillCardName;
+    private String fillEmail;
+    private String fillLast;
+    private String sender;
+    private String validateMessage;
+    private String invalidName;
+
+
+
 
 
 
@@ -51,6 +60,26 @@ public class WishlistObject {
                 case "errorSenderMessage":
                     setErrorSenderMessage(inputData.get(key));
                     break;
+                case "fillCardName":
+                    setFillCardName(inputData.get(key));
+                    break;
+                case"fillEmail":
+                    setFillEmail(inputData.get(key));
+                    break;
+                case"fillLast":
+                    setFillLast(inputData.get(key));
+                    break;
+                case"sender":
+                    setSender(inputData.get(key));
+                    break;
+                case"validateMessage":
+                    setValidateMessage(inputData.get(key));
+                    break;
+                case"invalidName":
+                    setInvalidName(inputData.get(key));
+                    break;
+
+
 
             }
         }
@@ -128,4 +157,54 @@ public class WishlistObject {
     public void setErrorSenderMessage(String errorSenderMessage) {
         this.errorSenderMessage = errorSenderMessage;
     }
+
+    public String getFillCardName() {
+        return fillCardName;
+    }
+
+    public void setFillCardName(String fillCardName) {
+        this.fillCardName = fillCardName;
+    }
+
+    public String getFillEmail() {
+        return fillEmail;
+    }
+
+    public void setFillEmail(String fillEmail) {
+        this.fillEmail = fillEmail;
+    }
+
+    public String getFillLast() {
+        return fillLast;
+    }
+
+    public void setFillLast(String fillLast) {
+        this.fillLast = fillLast;
+    }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
+    public String getValidateMessage() {
+        return validateMessage;
+    }
+
+    public void setValidateMessage(String validateMessage) {
+        this.validateMessage = validateMessage;
+    }
+
+    public String getInvalidName() {
+        return invalidName;
+    }
+
+    public void setInvalidName(String invalidName) {
+        this.invalidName = invalidName;
+    }
+
+
 }

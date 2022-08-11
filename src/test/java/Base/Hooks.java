@@ -3,7 +3,9 @@ package Base;
 import PropertyFile.propertyFile;
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.WebDriver;
 
+import java.sql.Driver;
 import java.util.HashMap;
 
 public class Hooks extends BaseTest {
@@ -21,6 +23,7 @@ public class Hooks extends BaseTest {
 
     @After
     public void clearEnv(){
+        getDriver().close();
 
     }
 
